@@ -43,7 +43,7 @@
   <a href="https://goedel-lm.github.io/"><b>Paper Link</b>👁️</a>
 </p>
 
-# Goedel-Prover: Pushing the Limits of Automated Theorem Proving Through Large-Scale Data Synthesis
+# Goedel-Prover: A New Frontier in Automated Theorem Proving
 
 ## 1. Introduction
 
@@ -193,7 +193,7 @@ This code repository is licensed under the MIT License.
 ## 8. Citation
 ```latex
 @article{lin2024Goedelprover,
-      title={Goedel-Prover: Pushing the Limit of Automated Theorem Proving Through Large Scale Data Synthesizing}, 
+      title={Goedel-Prover: A New Frontier in Automated Theorem Proving}, 
       author={Yong Lin and Shange Tang and Bohan Lyu and Jiayun Wu and Hongzhou Lin and Kaiyu Yang and Jia Li and Mengzhou Xia and Danqi Chen and Sanjeev Arora and Chi Jin},
 }
 ```
