@@ -79,11 +79,11 @@ class Lean4ServerProcess(mp.Process):
         self.complete_count = mp.Value(ctypes.c_int, 0)
     
     def run(self):
-        if self.memory_limit > 0:
-            resource.setrlimit(
-                resource.RLIMIT_AS,
-                (self.memory_limit * (1000 ** 3), self.memory_limit * (1000 ** 3))
-            )
+        # if self.memory_limit > 0:
+        #     resource.setrlimit(
+        #         resource.RLIMIT_AS,
+        #         (self.memory_limit * (1000 ** 3), self.memory_limit * (1000 ** 3))
+        #     )
         while True:
             inputs = self.task_queue.get()
             if inputs is None: # Terminate when receiving None
@@ -150,7 +150,7 @@ class Lean4ServerScheduler(ProcessScheduler):
 
 
 if __name__ == '__main__':
-    code = open('mathlib4/.lake/packages/REPL/test/aime_1983_p9.code.in').read()
+    code = open('mathlib4/.lake/packages/REPL/test/aime_1983_p9.in').read()
     lean4_scheduler = Lean4ServerScheduler(max_concurrent_requests=1, timeout=300, memory_limit=10, name='verifier')
     request_id_list = lean4_scheduler.submit_all_request([dict(code=code, ast=True, tactics=True)])
     outputs_list = lean4_scheduler.get_all_request_outputs(request_id_list)

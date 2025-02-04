@@ -158,14 +158,28 @@ cd Goedel-Prover
 pip install -r requirements.txt
 ```
 
-4. **Build Mathlib4**
+4. **Build mathlib4**
 
 ```sh
 cd mathlib4
 lake build
 ```
 
+5. **Test Lean 4 and mathlib4 installation**
+
+```sh
+cd ..
+python prover/lean/verifier.py
+```
+If there is any error, reinstall Lean 4 and rebuild mathlib4.
+
 ## 5. Quick Start
+<!-- For a quick start with running inference and testing the result on a single problem, run the following command in your terminal:
+```sh
+sh eval/eval.sh -i datasets/mathd_algebra_338.jsonl -s test -m Goedel-LM/Goedel-Prover-SFT -o results/mathd_algebra_338/Godel-Prover-SFT -n 32 -g 2 -c 32
+```
+After running the command, the summarized results will be available in `results/mathd_algebra_338/Godel-Prover-SFT/compilation_summarize.json` -->
+
 
 To run inference on our model and reproduce the performance on miniF2F. You can use `CUDA_VISIBLE_DEVICES=0,1,···` to specify the GPU devices. Here is an example of using two GPUs to evaluate Goedel-LM/Goedel-Prover-SFT on the miniF2F dataset for Pass@32.
 ```sh
@@ -181,6 +195,8 @@ Specify the arguments as follows:
 * `-n`: number of pass
 * `-g`: number of GPUs for inference
 * `-c`: number of CPUs for compilation
+
+For a quick start with running inference and testing the result on a single problem, you can replace the `datasets/minif2f.jsonl` by `datasets/mathd_algebra_338.jsonl`.
 
 
 ## 6. Questions and Bugs

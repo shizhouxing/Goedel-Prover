@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--input_path', default="", type=str)
 # 'results/test/code_compilation.json'
 parser.add_argument('--output_path', default="", type=str)
-# parser.add_argument('--output_path', default="example_data/o1_sorried_output.json", type=str)
+
 parser.add_argument('--cpu', default=64, type=int)
 args = parser.parse_args()
 
