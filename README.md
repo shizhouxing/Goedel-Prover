@@ -209,7 +209,7 @@ This code repository is licensed under the MIT License.
 ## 8. Citation
 ```latex
 @article{lin2024Goedelprover,
-      title={Goedel-Prover: A New Frontier in Automated Theorem Proving}, 
+      title={Goedel-Prover: A New Frontier in Open-source Automated Theorem Proving}, 
       author={Yong Lin and Shange Tang and Bohan Lyu and Jiayun Wu and Hongzhou Lin and Kaiyu Yang and Jia Li and Mengzhou Xia and Danqi Chen and Sanjeev Arora and Chi Jin},
 }
 ```
