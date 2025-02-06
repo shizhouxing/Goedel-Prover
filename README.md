@@ -43,7 +43,7 @@
   <a href="https://goedel-lm.github.io/"><b>Paper Link</b>👁️</a>
 </p>
 
-# Goedel-Prover: A New Frontier in Automated Theorem Proving
+# Goedel-Prover: A New Frontier in Open-source Automated Theorem Proving
 
 ## 1. Introduction
 
