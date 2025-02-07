@@ -76,7 +76,7 @@ class SearchProcess(mp.Process):
             verification_timecost = time.time() - verification_start_wait_time
 
             success_count = sum([int(result['complete']) for result in result_list])
-            self.process_print('Success: {} / {}    Generation: {:.2f} secs    Verfication: {:.2f} secs'.format(
+            self.process_print('Success: {} / {}    Generation: {:.2f} secs    Verification: {:.2f} secs'.format(
                 success_count, len(candidate_list), sample_timecost, verification_timecost,
             ))
             

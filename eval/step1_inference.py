@@ -103,13 +103,13 @@ import os
 os.makedirs(args.output_dir, exist_ok=True)
 
 output_file_path = F'{args.output_dir}/full_records.json'
-print(F"Outputing to {output_file_path}")
+print(F"Outputting to {output_file_path}")
 # Dump the list to a JSON file with indents
 with open(output_file_path, 'w') as json_file:
     json.dump(data_list, json_file, indent=4)
 
 toinfer_file_path = F'{args.output_dir}/to_inference_codes.json'
-print(F"Outputing to {toinfer_file_path}")
+print(F"Outputting to {toinfer_file_path}")
 # Dump the list to a JSON file with indents
 with open(toinfer_file_path, 'w') as json_file:
     json.dump(to_inference_codes, json_file, indent=4)
