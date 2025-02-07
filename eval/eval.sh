@@ -24,13 +24,13 @@ while getopts ":i:m:o:s:n:c:g:" opt; do
     ;;
   esac
 done
-python eval/step1_inference.py --input_path ${INPUT_PATH}  --model_path ${MODEL_PATH}  --output_dir $OUTPUT_DIR --split $SPLIT --n $N --gpu $GPU
+python -m eval.step1_inference --input_path ${INPUT_PATH}  --model_path ${MODEL_PATH}  --output_dir $OUTPUT_DIR --split $SPLIT --n $N --gpu $GPU
 
 INPUT_FILE=${OUTPUT_DIR}/to_inference_codes.json
 COMPILE_OUTPUT_PATH=${OUTPUT_DIR}/code_compilation.json
-python eval/step2_compile.py --input_path $INPUT_FILE --output_path $COMPILE_OUTPUT_PATH --cpu $CPU
+python -m eval.step2_compile --input_path $INPUT_FILE --output_path $COMPILE_OUTPUT_PATH --cpu $CPU
 
 
 SUMMARIZE_OUTPUT_PATH=${OUTPUT_DIR}/compilation_summarize.json
-python eval/step3_summarize_compile.py --input_path $COMPILE_OUTPUT_PATH --output_path $SUMMARIZE_OUTPUT_PATH --field ${FIELD}
+python -m eval.step3_summarize_compile --input_path $COMPILE_OUTPUT_PATH --output_path $SUMMARIZE_OUTPUT_PATH --field ${FIELD}
 
