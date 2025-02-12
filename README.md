@@ -43,13 +43,11 @@
   <a href="https://goedel-lm.github.io/"><b>Paper Link</b>👁️</a>
 </p>
 
-# Goedel-Prover: A New Frontier in Open-source Automated Theorem Proving
+# Goedel-Prover: A Frontier Model for Open-Source Automated Theorem Proving
 
 ## 1. Introduction
 
-Large language models (LLMs) have shown impressive reasoning capabilities, especially in tackling mathematical problems. There are two main approaches: informal reasoning, which employs natural language but lacks verifiability, and formal reasoning, which utilizes proof assistants like Lean to produce machine-verifiable proofs. While state-of-the-art LLMs, such as OpenAI's o1 and DeepSeek's R1, excel in informal problem-solving, they face challenges in formal theorem proving.
-
-A significant challenge in training LLMs for formal reasoning is the scarcity of data. To overcome this, we synthesize a large and diverse dataset by auto-formalizing a substantial corpus of informal mathematical problems. Our approach transforms natural language statements into various formal styles in Lean 4, resulting in 1.78 million syntactically correct and content-accurate statements. We then iteratively train a prover, alternating between generating verified proofs and training the model using these proofs. Our model, Goedel-Prover, achieves state-of-the-art performance across multiple benchmarks for whole-proof generation, which generates the entire proof without interacting with Lean. On the miniF2F benchmark (Pass@32), it attains a 57.6% success rate, surpassing the previous best open-source model by 7.6%. On PutnamBench, Goedel-Prover successfully solves 7 problems (Pass@512), securing the top position on the leaderboard. Furthermore, it generates 29.7K formal proofs for Lean-workbook problems, nearly doubling the 15.7K produced by earlier works.
+We introduce Goedel-Prover, an open-source large language model (LLM) that achieves the state-of-the-art (SOTA) performance in automated formal proof generation for mathematical problems. The key challenge in this field is the scarcity of formalized math statements and proofs, which we tackle in the following ways. We train statement formalizers to translate the natural language math problems from Numina into formal language (Lean 4), creating a dataset of 1.64 million formal statements. LLMs are used to check that the formal statements accurately preserve the content of the original natural language problems. We then iteratively build a large dataset of formal proofs by training a series of provers. Each prover succeeds in proving many statements that the previous ones could not, and these new proofs are added to the training set for the next prover. The final prover outperforms all existing open-source models in whole-proof generation. On the miniF2F benchmark, it achieves a 57.6% success rate (Pass@32), exceeding the previous best open-source model by 7.6%. On PutnamBench, Goedel-Prover successfully solves 7 problems (Pass@512), ranking first on the leaderboard. Furthermore, it generates 29.7K formal proofs for Lean Workbook problems, nearly doubling the 15.7K produced by earlier works.
 
 <p align="center">
   <img width="100%" src="figures/performance.png">
@@ -208,9 +206,14 @@ This code repository is licensed under the MIT License.
 
 ## 8. Citation
 ```latex
-@article{lin2024Goedelprover,
-      title={Goedel-Prover: A New Frontier in Open-source Automated Theorem Proving}, 
+@misc{lin2025goedelproverfrontiermodelopensource,
+      title={Goedel-Prover: A Frontier Model for Open-Source Automated Theorem Proving}, 
       author={Yong Lin and Shange Tang and Bohan Lyu and Jiayun Wu and Hongzhou Lin and Kaiyu Yang and Jia Li and Mengzhou Xia and Danqi Chen and Sanjeev Arora and Chi Jin},
+      year={2025},
+      eprint={2502.07640},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2502.07640}, 
 }
 ```
 
