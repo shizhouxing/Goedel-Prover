@@ -40,7 +40,7 @@
 
 
 <p align="center">
-  <a href="https://goedel-lm.github.io/"><b>Paper Link</b>👁️</a>
+  <a href="https://arxiv.org/abs/2502.07640"><b>Paper Link</b>👁️</a>
 </p>
 
 # Goedel-Prover: A Frontier Model for Open-Source Automated Theorem Proving
