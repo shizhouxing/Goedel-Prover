@@ -25,7 +25,7 @@ DEFAULT_LEAN_WORKSPACE = 'mathlib4/'
 
 
 def verify_lean4_file(code, lake_path=DEFAULT_LAKE_PATH, lean_workspace=DEFAULT_LEAN_WORKSPACE, last_env=None, verbose=False, timeout=300, allTactics=False, ast=False, premises=False, tactics=False):
-    command = dict(cmd=json.loads(code)['cmd'], allTactics=allTactics, ast=ast, tactics=tactics, premises=premises)
+    command = dict(cmd=code, allTactics=allTactics, ast=ast, tactics=tactics, premises=premises)
     if last_env is not None:
         command.update(env=last_env)
     message_str = json.dumps(command, ensure_ascii=False)
@@ -151,6 +151,7 @@ class Lean4ServerScheduler(ProcessScheduler):
 
 if __name__ == '__main__':
     code = open('mathlib4/.lake/packages/REPL/test/aime_1983_p9.in').read()
+    code = json.loads(code)["cmd"]
     lean4_scheduler = Lean4ServerScheduler(max_concurrent_requests=1, timeout=300, memory_limit=10, name='verifier')
     request_id_list = lean4_scheduler.submit_all_request([dict(code=code, ast=True, tactics=True)])
     outputs_list = lean4_scheduler.get_all_request_outputs(request_id_list)
