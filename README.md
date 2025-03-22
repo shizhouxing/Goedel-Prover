@@ -167,7 +167,7 @@ lake build
 
 ```sh
 cd ..
-python prover/lean/verifier.py
+python -m prover.lean.verifier
 ```
 If there is any error, reinstall Lean 4 and rebuild mathlib4.
 
